@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (status) status.textContent = 'Sending your inquiry. Please wait...';
 
       const formData = new FormData(form);
-      formData.append('access_key', 'b360fe64-dc6f-4b19-97e9-19c1cf53c37a');
+      formData.append('access_key', 'de5c844f-48d5-408e-9cb1-08c666b56f74');
       formData.append('subject', 'New website inquiry - Truepart Manufacturing');
       formData.append('from_name', 'Truepart Manufacturing Website');
 
