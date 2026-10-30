@@ -17,25 +17,46 @@ document.addEventListener('DOMContentLoaded', () => {
   if (year) year.textContent = new Date().getFullYear();
 
   const form = document.getElementById('quoteForm');
+  const status = document.getElementById('formStatus');
+
   if (form) {
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
-      const data = new FormData(form);
-      const name = String(data.get('name') || '').trim();
-      const company = String(data.get('company') || '').trim();
-      const email = String(data.get('email') || '').trim();
-      const project = String(data.get('project') || '').trim();
-      const subject = encodeURIComponent('Manufacturing inquiry from ' + (company || name));
-      const body = encodeURIComponent(
-        'Hello Truepart Manufacturing,\n\n' +
-        'Name: ' + name + '\n' +
-        'Company: ' + company + '\n' +
-        'Email: ' + email + '\n\n' +
-        'Project details:\n' + project + '\n\n' +
-        'Best regards,\n' + name
-      );
-      // Replace this placeholder with your real sales email before publishing.
-      window.location.href = 'mailto:REPLACE-WITH-YOUR-EMAIL@example.com?subject=' + subject + '&body=' + body;
+      const submitButton = form.querySelector('button[type="submit"]');
+      const originalButtonText = submitButton ? submitButton.innerHTML : '';
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+      }
+      if (status) status.textContent = 'Sending your inquiry. Please wait...';
+
+      const formData = new FormData(form);
+      formData.append('access_key', 'b360fe64-dc6f-4b19-97e9-19c1cf53c37a');
+      formData.append('subject', 'New website inquiry - Truepart Manufacturing');
+      formData.append('from_name', 'Truepart Manufacturing Website');
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        const result = await response.json();
+
+        if (result.success) {
+          form.reset();
+          if (status) status.textContent = 'Thank you. Your inquiry has been sent successfully. We will get back to you soon.';
+        } else {
+          if (status) status.textContent = 'Sorry, your inquiry could not be sent. Please try again or email truepartmanufacturing@gmail.com.';
+        }
+      } catch (error) {
+        if (status) status.textContent = 'A connection error occurred. Please try again or email truepartmanufacturing@gmail.com.';
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.innerHTML = originalButtonText;
+        }
+      }
     });
   }
 });
