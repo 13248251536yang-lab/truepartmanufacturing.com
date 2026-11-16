@@ -62,3 +62,56 @@
     height: 40px;
   }
 }
+
+/* TRUEPART - Improved Inquiry Form Typography */
+
+.quote-form label {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.quote-form input,
+.quote-form textarea {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 14px 13px;
+    margin-bottom: 19px;
+}
+
+.quote-form input::placeholder,
+.quote-form textarea::placeholder {
+    font-size: 15px;
+    color: #8996a1;
+}
+
+.quote-form textarea {
+    min-height: 120px;
+}
+
+.quote-form .form-button {
+    font-size: 17px;
+    font-weight: 700;
+    padding: 15px 20px;
+}
+
+.quote-form .form-note {
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* Mobile Optimization */
+@media (max-width: 650px) {
+    .quote-form {
+        padding: 24px;
+    }
+
+    .quote-form label {
+        font-size: 16px;
+    }
+
+    .quote-form input,
+    .quote-form textarea {
+        font-size: 16px;
+    }
+}
