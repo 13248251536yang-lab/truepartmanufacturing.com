@@ -4,11 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contact Truepart Manufacturing for CNC machining, metal stamping, custom fasteners and precision manufacturing solutions.">
+  <meta name="description" content="Contact Truepart Manufacturing for CNC machining, metal stamping and custom fasteners.">
   <title>Contact Us | Truepart Manufacturing</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <header class="site-header">
@@ -73,19 +72,10 @@
         </div>
       </div>
 
-      <p>
-        Have a project in mind? Send us a message.
-        We look forward to hearing from you.
-      </p >
+      <p>Have a project in mind? Send us a message. We look forward to hearing from you.</p >
     </div>
 
-    <form class="quote-form"
-      action="https://api.web3forms.com/submit" method="POST">
-
-      <!-- Replace the value below with your existing Web3Forms Access Key -->
-      <input type="hidden" name="access_key" value="REPLACE_WITH_YOUR_EXISTING_ACCESS_KEY">
-
-      <input type="hidden" name="subject" value="New Contact Inquiry - Truepart">
+    <form class="quote-form" id="quoteForm">
 
       <label for="name">Full Name *</label>
       <input id="name" type="text" name="name" placeholder="Your name" required>
@@ -97,14 +87,12 @@
       <input id="company" type="text" name="company" placeholder="Company name">
 
       <label for="message">How can we help? *</label>
-      <textarea id="message" name="message" rows="5"
-        placeholder="Tell us about your project or inquiry..." required></textarea>
+      <textarea id="message" name="message" rows="5" placeholder="Tell us about your project or inquiry..." required></textarea>
 
       <button class="form-button" type="submit">Send Message ↗</button>
 
-      <p class="form-note">
-        Thank you for your interest in Truepart Manufacturing.
-      </p >
+      <p id="formStatus" class="form-note"></p >
+
     </form>
 
   </section>
