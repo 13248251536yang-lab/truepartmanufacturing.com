@@ -208,18 +208,19 @@
     margin:0;
 }
 
-.brand-logo{
-    height:40px;
-}
-
-}
-
 .brand-logo {
   height: 85px;
   width: auto;
   max-width: 220px;
   object-fit: contain;
   display: block;
+}
+
+@media (max-width: 650px) {
+  .brand-logo {
+    height: 40px;
+    max-width: 190px;
+  }
 }
 
 @media (max-width: 650px) {
