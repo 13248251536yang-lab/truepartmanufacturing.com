@@ -2,9 +2,9 @@
 :root{--navy:#10283f;--navy2:#193a58;--blue:#2378c4;--blue2:#dcecf8;--ink:#172b3d;--muted:#657482;--paper:#f6f7f5;--line:#dce2e6;--white:#fff;--mono:'DM Mono',monospace;--sans:'DM Sans',sans-serif;--display:'Manrope',sans-serif}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6}a{color:inherit;text-decoration:none}.site-header{height:84px;padding:0 7.2%;display:flex;align-items:center;justify-content:space-between;background:#fff;border-bottom:1px solid #edf0f1;position:relative;z-index:5}.brand{display:flex;align-items:center;gap:11px}.brand-mark{width:37px;height:37px;background:var(--blue);color:#fff;display:grid;place-items:center;font:800 24px var(--display);border-radius:3px;transform:skew(-5deg)}.brand-name{font:800 15px var(--display);letter-spacing:1.8px;line-height:1.1}.brand-name small{display:block;font:500 9px var(--mono);letter-spacing:2.4px;margin-top:5px;color:#6a7c8a}.nav{display:flex;align-items:center;gap:36px;font-size:20px;font-weight:600}.nav>a:not(.nav-cta){color:#526373}.nav>a:hover,.text-link:hover{color:var(--blue)}.nav-cta{padding:12px 17px;border:1px solid #d9e1e7;border-radius:3px}.nav-cta span,.button span{margin-left:12px}.menu-toggle{display:none}
 .brand-logo {
-  height: 50px;
+  height: 60px;
   width: auto;
-  max-width: 160px;
+  max-width: 190px;
   object-fit: contain;
   display: block;
 }
