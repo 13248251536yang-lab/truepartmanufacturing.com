@@ -209,9 +209,9 @@
 }
 
 .brand-logo {
-  height: 85px;
+  height: 50px;
   width: auto;
-  max-width: 220px;
+  max-width: 160px;
   object-fit: contain;
   display: block;
 }
@@ -222,13 +222,6 @@
     max-width: 190px;
   }
 }
-
-@media (max-width: 650px) {
-  .brand-logo {
-    height: 40px;
-  }
-}
-
 /* TRUEPART - Improved Inquiry Form Typography */
 
 .quote-form label {
