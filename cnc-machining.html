@@ -1,1 +1,707 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore Truepart's CNC machining capabilities, including 3-axis, 4-axis and 5-axis milling, CNC turning, mill-turn and Swiss-type machining.">
+  <title>CNC Machining | Truepart Manufacturing</title>
+
+  <!-- Main website stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- CNC page styles -->
+  <style>
+    .cnc-page {
+      --cnc-navy: #102b49;
+      --cnc-blue: #1769aa;
+      --cnc-light: #f4f7fa;
+      --cnc-text: #26384a;
+      --cnc-muted: #667789;
+      color: var(--cnc-text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.65;
+    }
+
+    .cnc-page *,
+    .cnc-page *::before,
+    .cnc-page *::after {
+      box-sizing: border-box;
+    }
+
+    .cnc-page a {
+      text-decoration: none;
+    }
+
+    /* Header */
+    .cnc-header {
+      width: 100%;
+      min-height: 82px;
+      padding: 0 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+      border-bottom: 1px solid #e8edf2;
+      position: relative;
+      z-index: 10;
+    }
+
+    .cnc-brand img {
+      display: block;
+      height: 55px;
+      max-width: 190px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .cnc-nav {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+    }
+
+    .cnc-nav a {
+      color: var(--cnc-navy);
+      font-size: 14px;
+      font-weight: 600;
+      transition: color .2s ease;
+    }
+
+    .cnc-nav a:hover,
+    .cnc-nav a.active {
+      color: var(--cnc-blue);
+    }
+
+    .cnc-nav .cnc-nav-cta {
+      background: var(--cnc-blue);
+      color: #fff;
+      padding: 11px 21px;
+      border-radius: 4px;
+    }
+
+    .cnc-nav .cnc-nav-cta:hover {
+      background: var(--cnc-navy);
+      color: #fff;
+    }
+
+    .cnc-menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--cnc-navy);
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .cnc-hero {
+      min-height: 430px;
+      padding: 95px 8%;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(9, 29, 50, .94), rgba(9, 29, 50, .66)),
+        url("https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=2000&q=85")
+        center 48% / cover no-repeat;
+      color: #fff;
+    }
+
+    .cnc-hero-content {
+      max-width: 760px;
+    }
+
+    .cnc-eyebrow {
+      display: inline-block;
+      margin-bottom: 15px;
+      color: #8fc8f5;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+    }
+
+    .cnc-hero h1 {
+      margin: 0 0 20px;
+      color: #fff;
+      font-size: clamp(38px, 5vw, 60px);
+      line-height: 1.12;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+    .cnc-hero p {
+      max-width: 650px;
+      margin: 0 0 30px;
+      color: rgba(255,255,255,.88);
+      font-size: 18px;
+      line-height: 1.7;
+    }
+
+    .cnc-primary-btn {
+      display: inline-block;
+      padding: 14px 27px;
+      background: var(--cnc-blue);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: background .2s ease;
+    }
+
+    .cnc-primary-btn:hover {
+      background: #0e4d82;
+      color: #fff;
+    }
+
+    /* General sections */
+    .cnc-section {
+      padding: 85px 8%;
+    }
+
+    .cnc-section-heading {
+      max-width: 760px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .cnc-section-heading .cnc-eyebrow {
+      color: var(--cnc-blue);
+      margin-bottom: 8px;
+    }
+
+    .cnc-section-heading h2 {
+      margin: 0 0 16px;
+      color: var(--cnc-navy);
+      font-size: clamp(28px, 3.5vw, 38px);
+      line-height: 1.25;
+    }
+
+    .cnc-section-heading p {
+      margin: 0;
+      color: var(--cnc-muted);
+      font-size: 16px;
+    }
+
+    /* Process cards */
+    .cnc-process-section {
+      background: #fff;
+    }
+
+    .cnc-card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 26px;
+      max-width: 1250px;
+      margin: 0 auto;
+    }
+
+    .cnc-card {
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #e6ebf0;
+      border-radius: 5px;
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .cnc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(16, 43, 73, .10);
+    }
+
+    .cnc-card-image {
+      width: 100%;
+      height: 220px;
+      display: block;
+      object-fit: cover;
+      background: #e9eef3;
+    }
+
+    .cnc-card-content {
+      padding: 25px 24px 27px;
+    }
+
+    .cnc-card-content h3 {
+      margin: 0 0 11px;
+      color: var(--cnc-navy);
+      font-size: 20px;
+      line-height: 1.35;
+    }
+
+    .cnc-card-content p {
+      min-height: 72px;
+      margin: 0 0 19px;
+      color: var(--cnc-muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .cnc-card-link {
+      color: var(--cnc-blue);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .cnc-card-link:hover {
+      color: var(--cnc-navy);
+    }
+
+    /* Process details */
+    .cnc-details-section {
+      background: var(--cnc-light);
+    }
+
+    .cnc-detail-list {
+      max-width: 1050px;
+      margin: 0 auto;
+    }
+
+    .cnc-detail {
+      padding: 28px 30px;
+      margin-bottom: 16px;
+      background: #fff;
+      border-left: 4px solid var(--cnc-blue);
+      border-radius: 3px;
+      scroll-margin-top: 25px;
+    }
+
+    .cnc-detail h3 {
+      margin: 0 0 9px;
+      color: var(--cnc-navy);
+      font-size: 21px;
+    }
+
+    .cnc-detail p {
+      margin: 0;
+      color: var(--cnc-muted);
+      font-size: 15px;
+    }
+
+    /* Why Truepart */
+    .cnc-why-section {
+      background: #fff;
+    }
+
+    .cnc-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+      max-width: 1150px;
+      margin: 0 auto;
+    }
+
+    .cnc-why-item {
+      padding: 25px;
+      background: var(--cnc-light);
+      border-radius: 4px;
+    }
+
+    .cnc-why-item h3 {
+      margin: 0 0 12px;
+      color: var(--cnc-navy);
+      font-size: 19px;
+    }
+
+    .cnc-why-item p {
+      margin: 0;
+      color: var(--cnc-muted);
+      font-size: 14px;
+    }
+
+    /* CTA */
+    .cnc-contact-section {
+      padding: 75px 8%;
+      background: var(--cnc-navy);
+      text-align: center;
+    }
+
+    .cnc-contact-section h2 {
+      margin: 0 0 14px;
+      color: #fff;
+      font-size: clamp(28px, 3.5vw, 38px);
+    }
+
+    .cnc-contact-section p {
+      max-width: 650px;
+      margin: 0 auto 26px;
+      color: rgba(255,255,255,.82);
+      font-size: 16px;
+    }
+
+    /* Footer */
+    .cnc-footer {
+      padding: 24px 8%;
+      background: #0a2037;
+      color: rgba(255,255,255,.7);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .cnc-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cnc-section {
+        padding: 70px 6%;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .cnc-header {
+        min-height: 72px;
+        padding: 0 5%;
+      }
+
+      .cnc-brand img {
+        height: 48px;
+      }
+
+      .cnc-menu-toggle {
+        display: block;
+      }
+
+      .cnc-nav {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        padding: 20px 6%;
+        background: #fff;
+        border-top: 1px solid #e8edf2;
+        box-shadow: 0 8px 15px rgba(0,0,0,.08);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 19px;
+      }
+
+      .cnc-nav.open {
+        display: flex;
+      }
+
+      .cnc-hero {
+        min-height: 390px;
+        padding: 75px 7%;
+      }
+
+      .cnc-hero p {
+        font-size: 16px;
+      }
+
+      .cnc-section {
+        padding: 60px 6%;
+      }
+
+      .cnc-card-grid,
+      .cnc-why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cnc-card-image {
+        height: 210px;
+      }
+
+      .cnc-card-content p {
+        min-height: auto;
+      }
+
+      .cnc-detail {
+        padding: 23px 20px;
+      }
+
+      .cnc-contact-section {
+        padding: 60px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="cnc-page">
+
+    <!-- Header -->
+    <header class="cnc-header">
+      <a class="cnc-brand" href="index.html" aria-label="Truepart Manufacturing home">
+        <img src="assets/truepart-logo.png" alt="Truepart Manufacturing">
+      </a>
+
+      <button class="cnc-menu-toggle"
+              aria-label="Toggle navigation"
+              aria-expanded="false"
+              onclick="toggleCncMenu()">☰</button>
+
+      <nav class="cnc-nav" id="cncNav">
+        <a href="index.html">Home</a>
+        <a href="index.html#capabilities" class="active">Capabilities</a>
+        <a href="index.html#about">About Us</a>
+        <a href="index.html#contact" class="cnc-nav-cta">Contact Us</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="cnc-hero">
+      <div class="cnc-hero-content">
+        <span class="cnc-eyebrow">Our Manufacturing Capabilities</span>
+        <h1>CNC Machining</h1>
+        <p>
+          Precision CNC machining solutions for custom parts.
+          From prototypes to production runs, we help turn your designs
+          into reliable, high-quality components.
+        </p>
+        <a href="index.html#contact" class="cnc-primary-btn">Request a Quote</a>
+      </div>
+    </section>
+
+    <!-- Six CNC processes -->
+    <section class="cnc-section cnc-process-section" id="processes">
+      <div class="cnc-section-heading">
+        <span class="cnc-eyebrow">What We Offer</span>
+        <h2>Our CNC Machining Capabilities</h2>
+        <p>
+          A range of CNC machining processes to meet different part
+          geometries, material requirements and production needs.
+        </p>
+      </div>
+
+      <div class="cnc-card-grid">
+
+        <article class="cnc-card">
+          <img class="cnc-card-image"
+               src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=900&q=80"
+               alt="CNC milling machine and manufacturing equipment"
+               loading="lazy">
+          <div class="cnc-card-content">
+            <h3>3-Axis CNC Milling</h3>
+            <p>
+              A versatile machining solution for parts with features
+              across three primary axes.
+            </p>
+            <a class="cnc-card-link" href="#process-3-axis">Explore Process →</a>
+          </div>
+        </article>
+
+        <article class="cnc-card">
+          <img class="cnc-card-image"
+               src="https://images.unsplash.com/photo-1567789884554-0b844b597180?auto=format&fit=crop&w=900&q=80"
+               alt="Industrial CNC machining equipment"
+               loading="lazy">
+          <div class="cnc-card-content">
+            <h3>4-Axis CNC Milling</h3>
+            <p>
+              Additional rotary-axis capability for machining multiple
+              sides and more complex geometries.
+            </p>
+            <a class="cnc-card-link" href="#process-4-axis">Explore Process →</a>
+          </div>
+        </article>
+
+        <article class="cnc-card">
+          <img class="cnc-card-image"
+               src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80"
+               alt="Precision industrial manufacturing"
+               loading="lazy">
+          <div class="cnc-card-content">
+            <h3>5-Axis CNC Machining</h3>
+            <p>
+              Multi-axis machining for complex contours, intricate
+              features and demanding part geometries.
+            </p>
+            <a class="cnc-card-link" href="#process-5-axis">Explore Process →</a>
+          </div>
+        </article>
+
+        <article class="cnc-card">
+          <img class="cnc-card-image"
+               src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80"
+               alt="Machinery and precision engineering"
+               loading="lazy">
+          <div class="cnc-card-content">
+            <h3>CNC Turning</h3>
+            <p>
+              Precision turning for cylindrical components, shafts,
+              bushings and other rotational parts.
+            </p>
+            <a class="cnc-card-link" href="#process-turning">Explore Process →</a>
+          </div>
+        </article>
+
+        <article class="cnc-card">
+          <img class="cnc-card-image"
+               src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=900&q=80"
+               alt="Advanced manufacturing production"
+               loading="lazy">
+          <div class="cnc-card-content">
+            <h3>Mill-Turn Machining</h3>
+            <p>
+              Combined milling and turning operations for complex
+              components in fewer setups.
+            </p>
+            <a class="cnc-card-link" href="#process-mill-turn">Explore Process →</a>
+          </div>
+        </article>
+
+        <article class="cnc-card">
+          <img class="cnc-card-image"
+               src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=900&q=80"
+               alt="Precision manufacturing workshop"
+               loading="lazy">
+          <div class="cnc-card-content">
+            <h3>Swiss-Type CNC Machining</h3>
+            <p>
+              High-precision machining for small-diameter and slender
+              components with demanding requirements.
+            </p>
+            <a class="cnc-card-link" href="#process-swiss">Explore Process →</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Process descriptions -->
+    <section class="cnc-section cnc-details-section" id="details">
+      <div class="cnc-section-heading">
+        <span class="cnc-eyebrow">Process Overview</span>
+        <h2>Find the Right Machining Process</h2>
+        <p>
+          Different machining technologies offer different advantages.
+          We help identify a suitable process based on your part design
+          and project requirements.
+        </p>
+      </div>
+
+      <div class="cnc-detail-list">
+
+        <article class="cnc-detail" id="process-3-axis">
+          <h3>3-Axis CNC Milling</h3>
+          <p>
+            3-axis milling moves the cutting tool along the X, Y and Z
+            axes. It is commonly used for flat surfaces, pockets, slots,
+            holes and many standard machined components.
+          </p>
+        </article>
+
+        <article class="cnc-detail" id="process-4-axis">
+          <h3>4-Axis CNC Milling</h3>
+          <p>
+            4-axis milling adds a rotary axis to conventional 3-axis
+            machining. This allows parts to be positioned and machined
+            from additional angles, reducing repositioning operations
+            for suitable designs.
+          </p>
+        </article>
+
+        <article class="cnc-detail" id="process-5-axis">
+          <h3>5-Axis CNC Machining</h3>
+          <p>
+            5-axis machining combines three linear axes with two rotary
+            axes. It is suitable for complex surfaces, angled features
+            and components that require machining from multiple
+            directions.
+          </p>
+        </article>
+
+        <article class="cnc-detail" id="process-turning">
+          <h3>CNC Turning</h3>
+          <p>
+            CNC turning rotates the workpiece while a cutting tool
+            removes material. It is widely used for cylindrical parts
+            such as shafts, pins, bushings and threaded components.
+          </p>
+        </article>
+
+        <article class="cnc-detail" id="process-mill-turn">
+          <h3>Mill-Turn Machining</h3>
+          <p>
+            Mill-turn machining combines turning and milling operations
+            in one machine platform. It can help manufacture complex
+            components with multiple features while reducing the need
+            for separate machine setups.
+          </p>
+        </article>
+
+        <article class="cnc-detail" id="process-swiss">
+          <h3>Swiss-Type CNC Machining</h3>
+          <p>
+            Swiss-type machining is particularly suitable for small,
+            slender and precision components. The sliding headstock
+            design provides support close to the cutting area during
+            machining.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Why Truepart -->
+    <section class="cnc-section cnc-why-section">
+      <div class="cnc-section-heading">
+        <span class="cnc-eyebrow">Why Truepart</span>
+        <h2>Your Partner for Custom Machined Parts</h2>
+        <p>
+          We focus on helping customers source custom components
+          through clear communication and coordinated manufacturing.
+        </p>
+      </div>
+
+      <div class="cnc-why-grid">
+        <div class="cnc-why-item">
+          <h3>Custom Part Solutions</h3>
+          <p>
+            Manufacturing support based on your drawings, specifications
+            and project requirements.
+          </p>
+        </div>
+
+        <div class="cnc-why-item">
+          <h3>Flexible Production</h3>
+          <p>
+            Support for prototype development, small batches and
+            production orders.
+          </p>
+        </div>
+
+        <div class="cnc-why-item">
+          <h3>Clear Communication</h3>
+          <p>
+            Responsive project coordination to help keep your
+            manufacturing requirements on track.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="cnc-contact-section">
+      <h2>Have a CNC Machining Project?</h2>
+      <p>
+        Send us your drawings or 3D files. Our team will review
+        your requirements and help you find a suitable manufacturing
+        solution.
+      </p>
+      <a href="index.html#contact" class="cnc-primary-btn">Request a Quote</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="cnc-footer">
+      © 2026 Truepart Manufacturing Co., Ltd. All Rights Reserved.
+    </footer>
+
+  </div>
+
+  <script>
+    function toggleCncMenu() {
+      const nav = document.getElementById("cncNav");
+      const button = document.querySelector(".cnc-menu-toggle");
+      nav.classList.toggle("open");
+      button.setAttribute(
+        "aria-expanded",
+        nav.classList.contains("open")
+      );
+    }
+  </script>
+</body>
+</html>
+
