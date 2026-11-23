@@ -1,0 +1,533 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="description" content="Learn about Truepart Manufacturing, your partner for CNC machining and precision metal components.">
+
+  <title>About Us | Truepart Manufacturing</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ABOUT PAGE */
+    .about-page {
+      color: #263746;
+    }
+
+    .about-hero {
+      min-height: 420px;
+      padding: 100px 7.2%;
+      background: #10283f;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+
+    .about-hero-content {
+      max-width: 850px;
+    }
+
+    .about-hero .eyebrow {
+      color: #a9c7df;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+    }
+
+    .about-hero h1 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.15;
+      font-weight: 700;
+      margin: 0 0 24px;
+    }
+
+    .about-hero h1 em {
+      color: #83b8e5;
+      font-style: normal;
+    }
+
+    .about-hero-copy {
+      max-width: 700px;
+      color: #d5e0e8;
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    .about-content {
+      padding: 90px 7.2%;
+      background: #f6f7f5;
+    }
+
+    .about-container {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .about-label {
+      color: #2378c4;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .about-intro-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-intro-grid h2 {
+      font-family: Manrope, sans-serif;
+      color: #10283f;
+      font-size: clamp(32px, 3.5vw, 43px);
+      line-height: 1.25;
+      margin: 0;
+    }
+
+    .about-intro-grid h2 em {
+      color: #2378c4;
+      font-style: normal;
+    }
+
+    .about-description p {
+      font-size: 17px;
+      line-height: 1.9;
+      color: #52616e;
+      margin: 0 0 20px;
+    }
+
+    .about-tagline {
+      color: #10283f !important;
+      font-weight: 700;
+      font-size: 20px !important;
+      margin-top: 28px !important;
+    }
+
+    .about-capabilities {
+      padding: 90px 7.2%;
+      background: #fff;
+    }
+
+    .about-section-heading {
+      max-width: 720px;
+      margin-bottom: 45px;
+    }
+
+    .about-section-heading h2 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(32px, 3.5vw, 43px);
+      line-height: 1.25;
+      color: #10283f;
+      margin: 0 0 18px;
+    }
+
+    .about-section-heading h2 em {
+      color: #2378c4;
+      font-style: normal;
+    }
+
+    .about-section-heading p {
+      color: #596875;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .about-capability-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .about-capability-card {
+      padding: 34px 30px;
+      background: #f6f7f5;
+      border: 1px solid #e6eaed;
+      min-height: 245px;
+    }
+
+    .about-card-number {
+      color: #2378c4;
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .about-capability-card h3 {
+      color: #10283f;
+      font-family: Manrope, sans-serif;
+      font-size: 23px;
+      margin: 25px 0 14px;
+    }
+
+    .about-capability-card p {
+      color: #596875;
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .about-process {
+      padding: 90px 7.2%;
+      background: #10283f;
+      color: #fff;
+    }
+
+    .about-process .about-container {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 75px;
+    }
+
+    .about-process h2 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(32px, 3.5vw, 43px);
+      line-height: 1.25;
+      margin: 0 0 20px;
+    }
+
+    .about-process h2 em {
+      color: #83b8e5;
+      font-style: normal;
+    }
+
+    .about-process-intro {
+      color: #cbd8e2;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .about-process-item {
+      display: flex;
+      gap: 25px;
+      padding: 24px 0;
+      border-bottom: 1px solid rgba(255,255,255,.17);
+    }
+
+    .about-process-item:first-child {
+      padding-top: 0;
+    }
+
+    .about-process-number {
+      color: #83b8e5;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .about-process-item h3 {
+      font-size: 21px;
+      margin: 0 0 10px;
+    }
+
+    .about-process-item p {
+      color: #cbd8e2;
+      font-size: 16px;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    .about-cta {
+      padding: 85px 7.2%;
+      text-align: center;
+      background: #f6f7f5;
+    }
+
+    .about-cta h2 {
+      color: #10283f;
+      font-family: Manrope, sans-serif;
+      font-size: clamp(34px, 4vw, 48px);
+      line-height: 1.2;
+      margin: 18px 0;
+    }
+
+    .about-cta h2 em {
+      color: #2378c4;
+      font-style: normal;
+    }
+
+    .about-cta p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: #596875;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 850px) {
+      .about-intro-grid,
+      .about-process .about-container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .about-capability-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 650px) {
+      .about-hero {
+        min-height: auto;
+        padding: 75px 7%;
+      }
+
+      .about-content,
+      .about-capabilities,
+      .about-process {
+        padding: 65px 7%;
+      }
+
+      .about-intro-grid h2,
+      .about-section-heading h2,
+      .about-process h2 {
+        font-size: 32px;
+      }
+
+      .about-hero-copy,
+      .about-description p,
+      .about-section-heading p,
+      .about-process-intro {
+        font-size: 16px;
+      }
+
+      .about-capability-card {
+        padding: 28px 24px;
+      }
+
+      .about-cta {
+        padding: 65px 7%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Truepart Manufacturing home">
+      <img class="brand-logo" src="assets/truepart-logo.png" alt="Truepart Manufacturing">
+    </a>
+
+    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <nav class="nav">
+      <a href="cnc-machining.html">Capabilities</a>
+      <a href="about.html" class="active">About Us</a>
+      <a href="index.html#insights">Insights</a>
+      <a href="contact.html">Contact Us</a>
+      <a class="nav-cta" href="contact.html">Request a Quote <span>↗</span></a>
+    </nav>
+  </header>
+
+  <main class="about-page">
+
+    <section class="about-hero">
+      <div class="about-hero-content">
+        <p class="eyebrow">ABOUT TRUEPART</p>
+        <h1>
+          Manufacturing Solutions<br>
+          Built Around <em>Your Needs.</em>
+        </h1>
+        <p class="about-hero-copy">
+          Making custom manufacturing easier and more accessible
+          through reliable manufacturing solutions.
+        </p>
+        <a class="button button-primary" href="contact.html">
+          Talk to Our Team <span>↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="about-content">
+      <div class="about-container">
+        <div class="about-label">WHO WE ARE</div>
+
+        <div class="about-intro-grid">
+          <h2>
+            About<br>
+            <em>Truepart.</em>
+          </h2>
+
+          <div class="about-description">
+            <p>
+              At Truepart, we make custom manufacturing easier and more
+              accessible. We help businesses worldwide turn their designs
+              and ideas into high-quality precision components through
+              reliable manufacturing solutions.
+            </p>
+
+            <p>
+              We specialize in CNC machining and precision metal components,
+              supported by our own core manufacturing base and a trusted
+              network of manufacturing partners across China. This
+              combination allows us to offer flexible manufacturing
+              capabilities and dependable production solutions.
+            </p>
+
+            <p>
+              From rapid prototyping to small-batch and volume production,
+              we work closely with our customers to meet their project
+              requirements. Our team coordinates every stage of the process,
+              from quotation and engineering communication to production
+              and delivery.
+            </p>
+
+            <p>
+              At Truepart, we are committed to making manufacturing simple,
+              reliable, and efficient.
+            </p>
+
+            <p class="about-tagline">
+              Your ideas, our manufacturing expertise.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-capabilities">
+      <div class="about-container">
+        <div class="about-section-heading">
+          <div class="about-label">OUR CAPABILITIES</div>
+          <h2>
+            Custom Components.<br>
+            <em>Reliable Solutions.</em>
+          </h2>
+          <p>
+            We support custom metal component projects through
+            manufacturing capabilities and coordinated production resources.
+          </p>
+        </div>
+
+        <div class="about-capability-grid">
+
+          <article class="about-capability-card">
+            <span class="about-card-number">01 / MACHINING</span>
+            <h3>CNC Machining</h3>
+            <p>
+              Precision-machined metal components made to your drawings,
+              material requirements, and specifications.
+            </p>
+          </article>
+
+          <article class="about-capability-card">
+            <span class="about-card-number">02 / METAL FORMING</span>
+            <h3>Metal Stamping</h3>
+            <p>
+              Custom stamped and formed components for different
+              geometries, materials, and production requirements.
+            </p>
+          </article>
+
+          <article class="about-capability-card">
+            <span class="about-card-number">03 / HARDWARE</span>
+            <h3>Fasteners & Hardware</h3>
+            <p>
+              Standard and custom fastener solutions based on your
+              drawings, dimensions, materials, and finishes.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about-process">
+      <div class="about-container">
+
+        <div>
+          <div class="about-label">HOW WE WORK</div>
+          <h2>
+            From Your Ideas<br>
+            to <em>Production.</em>
+          </h2>
+          <p class="about-process-intro">
+            We work closely with customers to understand project
+            requirements and coordinate the process from initial
+            quotation through production and delivery.
+          </p>
+        </div>
+
+        <div>
+
+          <article class="about-process-item">
+            <span class="about-process-number">01</span>
+            <div>
+              <h3>Quotation & Requirements</h3>
+              <p>
+                Review drawings, materials, quantities, finishes,
+                and delivery expectations.
+              </p>
+            </div>
+          </article>
+
+          <article class="about-process-item">
+            <span class="about-process-number">02</span>
+            <div>
+              <h3>Engineering Communication</h3>
+              <p>
+                Clarify specifications and discuss suitable
+                manufacturing approaches.
+              </p>
+            </div>
+          </article>
+
+          <article class="about-process-item">
+            <span class="about-process-number">03</span>
+            <div>
+              <h3>Production Coordination</h3>
+              <p>
+                Coordinate manufacturing resources and follow
+                project progress.
+              </p>
+            </div>
+          </article>
+
+          <article class="about-process-item">
+            <span class="about-process-number">04</span>
+            <div>
+              <h3>Quality & Delivery</h3>
+              <p>
+                Coordinate quality checks and delivery according
+                to agreed project requirements.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cta">
+      <div class="about-label">LET'S WORK TOGETHER</div>
+      <h2>
+        Have a Project<br>
+        <em>in Mind?</em>
+      </h2>
+      <p>
+        Share your drawings and requirements with us.
+        Let's discuss how Truepart can support your next project.
+      </p>
+      <a class="button button-primary" href="contact.html">
+        Request a Quote <span>↗</span>
+      </a>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Custom manufacturing support for B2B projects.</p>
+    <span>© <span id="year"></span> Truepart Manufacturing Co., Ltd.</span>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
