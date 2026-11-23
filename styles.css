@@ -303,3 +303,84 @@ margin:auto;
         font-size: 16px;
     }
 }
+
+/* Homepage quote entry cards */
+.quote-entry-section {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  padding: 38px 7.2% 48px;
+  background: #fff;
+}
+
+.quote-entry-card {
+  display: block;
+  overflow: hidden;
+  background: #f6f7f5;
+  border-radius: 8px;
+  color: #10283f;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.quote-entry-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(16, 40, 63, .12);
+}
+
+.quote-entry-card img {
+  display: block;
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.quote-entry-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 20px;
+}
+
+.quote-entry-content h3 {
+  margin: 0 0 3px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #10283f;
+}
+
+.quote-entry-content p {
+  margin: 0;
+  font-size: 15px;
+  color: #526373;
+}
+
+.quote-entry-arrow {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #F28C28;
+  color: #fff;
+  font-size: 25px;
+  transition: background .25s ease;
+}
+
+.quote-entry-card:hover .quote-entry-arrow {
+  background: #D9771E;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .quote-entry-section {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 28px 5%;
+  }
+
+  .quote-entry-card img {
+    height: 200px;
+  }
+}
